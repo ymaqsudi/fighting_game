@@ -7,12 +7,13 @@ onready var end_of_gun = $EndOfGun
 
 
 var speed = 0
-var max_speed = 1000
-var acceleration = 2000
+var max_speed = 200
+var acceleration = 1000
 var move_direction = Vector2(0,0)
 
 func _physics_process(delta):
 	MovementLoop(delta)
+	
 	
 func _process(delta):
 	pass
@@ -21,7 +22,7 @@ func MovementLoop(delta):
 	move_direction.x = int(Input.is_action_pressed("Right")) - int(Input.is_action_pressed("Left"))
 	move_direction.y = (int(Input.is_action_pressed("Down")) - int(Input.is_action_pressed("Up"))) / float(2)
 	
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
 	
 	if move_direction == Vector2(0,0):
 		speed = 0
@@ -42,4 +43,3 @@ func shoot():
 	var bullet_instance = Bullet.instance()
 	owner.add_child(bullet_instance)
 	bullet_instance.transform = end_of_gun.global_transform
-

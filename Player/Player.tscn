@@ -6,8 +6,8 @@
 [ext_resource path="res://Player/gun.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 110.0
-height = 338.0
+radius = 17.6002
+height = 57.5997
 
 [node name="Yaseen" type="KinematicBody2D"]
 position = Vector2( -216, -489 )
@@ -15,19 +15,22 @@ script = ExtResource( 1 )
 Bullet = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 443, -187 )
+position = Vector2( 576, -175 )
 scale = Vector2( 5, 5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 197, 363 )
+position = Vector2( 320, 393 )
 rotation = -1.5708
+scale = Vector2( 5, 5 )
 shape = SubResource( 1 )
 
 [node name="EndOfGun" type="Position2D" parent="."]
-position = Vector2( 984, 105 )
+position = Vector2( 1096, -119 )
 
 [node name="gun" type="Sprite" parent="."]
-position = Vector2( 701, 136 )
-scale = Vector2( 4.34165, 3.84091 )
+position = Vector2( 920, 169 )
+scale = Vector2( 4.2485, 3.46006 )
 texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
